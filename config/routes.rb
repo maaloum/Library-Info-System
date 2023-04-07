@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'book#list'
   get 'book/list'
   get 'book/new'
   post 'book/create'

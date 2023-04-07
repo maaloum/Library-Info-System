@@ -10,7 +10,7 @@
     <label for = "book_price">Price</label>:
     <%= text_field 'book', 'price' %>
 </p>
-<p>
+<p  class= 'collection'>
     <label for = "book_subject_id">Subject</label>:
     <%= collection_select(:book, :subject_id, @subjects, :id, :title, prompt: true) %>
 </p>
@@ -18,7 +18,7 @@
     <label for = "book_body">Description</label><br/>
     <%= text_area 'book', 'body' %>
 </p>
-<%= submit_tag "Create" %>
+<p class ='submit'><%= submit_tag "Create" %></p>
 
 <% end -%>
 <%= link_to 'Back', {:action => 'list'} %>
