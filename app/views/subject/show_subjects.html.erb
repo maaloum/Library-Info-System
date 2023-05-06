@@ -2,6 +2,8 @@
 
 <ul id = "books">
    <% @subject.books.each do |c| %>
-   <li><%= link_to c.title, :action => "show", :id => c.id -%></li>
+   <li><%= link_to c.title, book_path(c) %></li>
    <% end %>
 </ul>
+
+  

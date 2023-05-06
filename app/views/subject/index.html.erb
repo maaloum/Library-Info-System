@@ -1,0 +1,9 @@
+<% if @subjects.blank?%>
+    <p>No subjects</p>
+<% else %>
+        <% @subjects.each do |subject| %>
+            <p><%= link_to subject.title, book_show_subjects_path(subject)%></p>
+            <%= button_to "Delete",  subject_path(subject), method: :delete, class: "btn btn-danger m-2",   data: {:confirm => "Are you sure you want to delete this Subject?"} %>
+        <% end %>
+<% end%>
+<%= link_to "Add Subject", new_subject_path, class: "submit btn btn-success mx-3 mb-4" %>

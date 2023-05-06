@@ -1,0 +1,17 @@
+<section class="d-flex flex-column p-2 justify-content-center align-items-center">
+
+<h1>Add new Subject</h1>
+
+<%= form_tag :action => 'create', class:"d-flex flex-column p-2 justify-content-center align-items-center"  do %>
+
+    <div class="form-outline mb-2 p-2">
+    <label for = "subject_title">Title</label>:
+        <%= text_field 'subject', 'title' %>
+    </div>
+<%= submit_tag "Add subject", class: "submit btn btn-success mx-3 mb-4" %>
+<% end -%>
+
+
+
+
+</section>

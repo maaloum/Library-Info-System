@@ -1,12 +1,12 @@
 <strong>Subject > </strong> <p class ='subject-title' ><%= link_to @book.subject.title,
-:action => "show_subjects", :id => @book.subject.id %><br /></p>
+book_show_subjects_path(@subject) %><br /></p>
 
 <h1><%= @book.title %></h1>
 
 <p>
-   <strong>Price: </strong> $<%= @book.price %><br />
    <strong>Subject :</strong> <%= @book.subject.title %><br />
-   <strong>Created Date:</strong> <%= @book.created_at %><br />
+   <strong>Created Date:</strong> <%= @book.created_at.strftime("%d-%m-%Y") %><br />
+   by  <%= current_user.username %>
 </p>
 
 <p><%= @book.body %></p>

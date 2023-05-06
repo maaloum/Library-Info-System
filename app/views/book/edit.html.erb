@@ -1,14 +1,26 @@
-<h1>Edit Book Detail</h1>
+<h1 class= "mb-4 text-center">Edit Book Details</h1>
 
-<%= form_for @book, :url =>{:action => "update", :id =>@book} do |f| %>
+<%= form_for @book, class: "d-flex align-itemes-center justifiy-content-center flex-column", :url =>{:action => "update", :id =>@book} do |f| %>
 
-<p>Title: <%= f.text_field 'title' %></p>
-<p>Price: <%= f.text_field  'price' %></p>
-<p class= 'collection'>Subject: <%= f.collection_select :subject_id, Subject.all, :id, :title %></p>
-<p>Description<br/>
+ <div class="form-outline mb-4 mx-4">
+    <label class="form-label" for="form4Example1">Title</label>
+    <P><%= f.text_field 'title' %></P>
+  </div>
 
-<%= f.text_area 'body' %></p>
-<p class ='submit'><%= f.submit "Save" %></p>
+  <!-- Email input -->
+  <div class="form-outline mb-4 mx-4">
+    <label class="form-label" for="form4Example2">Subject</label>
+    <p class= 'collection'> <%= f.collection_select :subject_id, @subjects, :id, :title %></p>
+  </div>
+
+  <!-- Message input -->
+  <div class="form-outline mb-4 mx-4">
+    <label class="form-label" for="form4Example3">Description</label>
+    <%= f.text_area 'body', class:"me-2 form-control  " %>
+  </div>
+
+  <!-- Submit button -->
+  <%= f.submit "Edit", class:"btn btn-primary btn-block mb-4 mx-4" %>
 <% end %>
 
-<%= link_to 'Back', {:action => 'list' } %>
+<%= link_to 'Back', {:action => 'list' }, class:"btn btn-secondary btn-block mb-4 mx-4" %>

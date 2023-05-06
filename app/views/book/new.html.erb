@@ -1,24 +1,31 @@
+<section class="d-flex flex-column p-2 justify-content-center align-items-center">
+
 <h1>Add new book</h1>
 
-<%= form_tag :action => 'create' do %>
-<p>
+<% if @subjects.blank?%>
+    <p>There are no subjects in the database. Please <%= link_to 'Add a subject', new_subject_path %> first.</p>
+<% else%>
+<%= form_tag :action => 'create', class:"d-flex flex-column p-2 justify-content-center align-items-center"  do %>
+
+    <div class="form-outline mb-2 p-2">
     <label for = "book_title">Title</label>:
-    <%= text_field 'book', 'title' %>
-</p>
+        <%= text_field 'book', 'title' %>
+    </div>
+    <div  class= 'collection form-outline mb-2 p-2'>
+        <label for = "book_subject_id">Subject</label>:
+        <%= collection_select(:book, :subject_id, @subjects, :id, :title, prompt: true) %>
+    </div>
 
-<p>
-    <label for = "book_price">Price</label>:
-    <%= text_field 'book', 'price' %>
-</p>
-<p  class= 'collection'>
-    <label for = "book_subject_id">Subject</label>:
-    <%= collection_select(:book, :subject_id, @subjects, :id, :title, prompt: true) %>
-</p>
-<p>
-    <label for = "book_body">Description</label><br/>
-    <%= text_area 'book', 'body' %>
-</p>
-<p class ='submit'><%= submit_tag "Create" %></p>
-
+    <div class="form-outline mb-2 p-2">
+        <label for = "book_body">Description</label><br/>
+        <%= text_area 'book', 'body' %>
+    </div>
+<%= submit_tag "Add Book", class: "submit btn btn-success mx-3 mb-4" %>
+<%= link_to 'Back', {:action => 'list'}, class: "submit btn btn-secondary mx-3 mb-4" %> 
 <% end -%>
-<%= link_to 'Back', {:action => 'list'} %>
+<% end -%>
+
+
+
+
+</section>

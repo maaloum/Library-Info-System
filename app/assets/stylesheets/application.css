@@ -1,14 +1,10 @@
 body {
     font-family: Helvetica, Geneva, Arial, sans-serif;
     font-size: small;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    background-color: #1c1e1f;
  }
  
- 
+ /* 
  a:link, a:active, a:visited {
     color: #FAFFFD;
     text-decoration: none;
@@ -186,3 +182,27 @@ form p{
    color: #000;
    text-decoration: none;
 }
+
+.others{
+   padding: 10px;
+   margin: 10px;
+}
+
+.others a{
+   padding: 10px;
+   margin: 10px;
+   color: #000;
+   text-decoration: none;
+   font-weight: bold;
+}
+*/
+.username{
+   color: #FA824C;
+   font-weight: bold;
+}
+
+nav li {
+   display: inline;
+   padding-left: 5px;
+   padding-right: 5px;
+} 
